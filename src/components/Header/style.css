@@ -1,13 +1,14 @@
 .header {
+    background-color: rgba(19, 22, 25, 1);
+    padding: 40px;
+}
+
+.header_content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 128px;
-    background-color: rgba(19, 22, 25, 1);
     color: white;
-    padding: 20px 30px;
     text-transform: uppercase;
-    height: 72px;
 }
 
 .brand_container,
