@@ -1,16 +1,51 @@
-# React + Vite
+# FitSpace
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Fitness landing page built with React and Vite. Includes a header with navigation, an auto-playing banner slider, and split content sections.
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- React 19
+- Vite 8
+- React Router DOM 7
+- Oxlint
 
-## React Compiler
+## Getting started
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm install
+npm run dev
+```
 
-## Expanding the Oxlint configuration
+Open the local URL shown in the terminal (usually `http://localhost:5173`).
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## Scripts
+
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Start the development server |
+| `npm run build` | Production build to `dist/` |
+| `npm run preview` | Preview the production build |
+| `npm run lint` | Run Oxlint |
+
+## Project structure
+
+```
+src/
+  components/
+    Header/          # Logo, nav links, language toggle, CTA
+    Slider/          # Event banners with dots + autoplay
+    SplitSection/    # Text + image sections
+  pages/
+    Home.jsx         # Main page composition
+  constants.js       # Navigation, banners, section content
+public/
+  images/            # Logos, icons, content photos
+  event_banners/     # Slider banners
+```
+
+Static assets live in `public/` and are referenced by absolute paths (e.g. `/images/brand_logo_vector.png`) from `src/constants.js`.
+
+## Notes
+
+- Hovering the slider pauses autoplay; leaving resumes it.
+- Routes are defined in `App.jsx`; page content currently maps to `Home` while additional pages are placeholders.
