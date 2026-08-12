@@ -7,9 +7,12 @@
   background-color: rgba(0, 0, 0, 1);
   overflow: visible;
   --img-bleed: 40px;
-  padding: 28px 24px;
+  padding: 28px 64px;
 }
 
+.other_split_section {
+  background-color: rgba(19, 22, 25, 1);
+}
 .split_section_content_background_img {
   position: absolute;
   left: 0;
@@ -26,7 +29,7 @@
   justify-content: center;
   align-items: flex-start;
   gap: 16px;
-  flex: 0 1 480px;
+  flex: 0 1 420px;
   padding: 64px 0;
 
 }
@@ -76,12 +79,24 @@
 
 .split_section_img {
   display: flex;
-  flex: 0 0 480px;
+  flex: 0 1 420px;
+  max-width: 100%;
   align-self: stretch;
   margin-block: calc(-28px - var(--img-bleed));
   height: calc(100% + 2 * (28px + var(--img-bleed)));
   overflow: hidden;
   z-index: 1;
+}
+
+/* First section: no upward bleed into slider dots */
+.split_section:first-of-type .split_section_img {
+  margin-block: 0 calc(-28px - var(--img-bleed));
+  height: calc(100% + 28px + var(--img-bleed));
+}
+
+.other_split_section .split_section_img {
+  margin-block: calc(-28px - var(--img-bleed)) -28px;
+  height: calc(100% + 2 * 28px + var(--img-bleed));
 }
 
 .split_section_img_media {
