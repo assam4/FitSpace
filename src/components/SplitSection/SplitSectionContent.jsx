@@ -1,12 +1,18 @@
+import SectionTitle from '../SectionTitle/SectionTitle';
+
 export default function SplitSectionContent({
   backgroundText,
+  backgroundAlign = 'left',
   title,
   description,
 }) {
   return (
     <div className="split_section_content">
-      <img className="split_section_content_background_img" src={backgroundText} alt="Background Text" />
-      <h2 className="split_section_content_title">{title}</h2>
+      <SectionTitle
+        title={title}
+        backgroundSrc={backgroundText}
+        backgroundAlign={backgroundAlign}
+      />
       <p className="split_section_content_description">{description}</p>
       <button type="button" className="split_section_content_button">
         View More
@@ -30,5 +36,5 @@ export default function SplitSectionContent({
         </span>
       </button>
     </div>
-  )
+  );
 }

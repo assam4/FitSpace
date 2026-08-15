@@ -33,6 +33,7 @@ export const splitSections = [
     imageInRight: true,
     leftContent: {
       backgroundText: '/images/strong_bg.png',
+      backgroundAlign: 'left',
       title: 'Be You, Just stronger!\n Power is in you',
       description:
         'Unum solum justo ex ius. Pro cu probo laboramus\n eius insolens euripidis te eos, ut agam tota.',
@@ -45,6 +46,7 @@ export const splitSections = [
     leftContent: splitSectionsContentImgs[1],
     rightContent: {
       backgroundText: '/images/start_bg.png',
+      backgroundAlign: 'left',
       title: 'Be You, Just stronger!\n Power is in you',
       description:
         'Unum solum justo ex ius. Pro cu probo laboramus eius insolens euripidis te eos, ut agam tota.',
@@ -86,3 +88,20 @@ export const collectionContent = [
     text: 'body sculpt',
   },
 ]
+
+export const featureCards = {
+  backgroundSrcs: '/images/bg_image.jpg',
+  media: 'images/feature_media.jpg',
+  buttonText: 'Play',
+  bottomHeaderTitle: 'JOIN US',
+}
+
+export const inputSection = {
+  title: 'Start here',
+  backgroundText: '/images/strong_bg.png',
+  backgroundAlign: 'center',
+  description: 'fill the form below to start your journey',
+  placeholder1: 'Name',
+  placeholder2: 'Email',
+  buttonText: 'Subscribe',
+}
