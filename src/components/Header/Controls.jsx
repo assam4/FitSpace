@@ -1,18 +1,34 @@
-import { useState } from 'react'
-import { languages } from '../../constants'
+import { useEffect, useState } from 'react'
+import axios from 'axios'
 
 export default function Controls() {
-    const [lang, setLang] = useState(0);
-    const toggleLanguage = () => {
-        setLang((lang + 1) % languages.length);
-    }
+  const [languages, setLanguages] = useState([])
+  const [lang, setLang] = useState(0)
 
-    return (
-        <div className='controls_container'>
-            <button className='order_button'> Book Now </button>
-            <div className='language_change_container' onClick={toggleLanguage}>
-                <img src={languages[lang]} alt='language' className='language_icon' />
-            </div>
-        </div>
-    )
+  useEffect(() => {
+    axios
+      .get('/api/languages')
+      .then((res) => setLanguages(res.data))
+      .catch(() => setLanguages([]))
+  }, [])
+
+  const toggleLanguage = () => {
+    if (!languages.length) {
+      return
+    }
+    setLang((prev) => (prev + 1) % languages.length)
+  }
+
+  const current = languages[lang]
+
+  return (
+    <div className="controls_container">
+      <button className="order_button"> Book Now </button>
+      <div className="language_change_container" onClick={toggleLanguage}>
+        {current && (
+          <img src={current.src} alt={current.alt} className="language_icon" />
+        )}
+      </div>
+    </div>
+  )
 }
