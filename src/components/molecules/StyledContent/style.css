@@ -34,6 +34,11 @@
   justify-content: center;
 }
 
+.styled_content_container.align-left .styled_text_container,
+.styled_content_container.align-left .styled_content_footer_container {
+  padding-inline: 40px 0;
+}
+
 .styled_content_footer_container {
   display: flex;
 }

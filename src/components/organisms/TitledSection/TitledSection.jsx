@@ -11,15 +11,14 @@ export default function TitledSection({
   description,
   iconSrc,
   iconAlt,
-  placeholders = [],
-  types = [],
+  fields = [],
   row = 3,
   button,
 }) {
   return (
     <Container className="titled_section">
       <StyledContent
-        align="center"
+        align={backgroundAlign}
         heading={
           title && (
             <StyledHeading
@@ -33,10 +32,9 @@ export default function TitledSection({
         }
         text={description && <p>{description}</p>}
         contentFutter={
-          placeholders.length > 0 && (
+          fields.length > 0 && (
             <StyledInputSection
-              placeholders={placeholders}
-              types={types}
+              fields={fields}
               row={row}
               button={button}
             />

@@ -1,5 +1,5 @@
 import Slider from '../components/organisms/Slider/Slider'
-import BannerCollection from '../components/organisms/BannerCollection.jsx/BannerCollection'
+import BannerCollection from '../components/organisms/BannerCollection/BannerCollection'
 import IconsCollection from '../components/organisms/IconsCollection/IconsCollection'
 import FeatureCard from '../components/organisms/FeatureCard/FeatureCard'
 import TitledSection from '../components/organisms/TitledSection/TitledSection'
@@ -7,6 +7,7 @@ import SplitMapHeading from '../components/organisms/SplitMapHeading/SplitMapHea
 import StyledButton from '../components/atoms/StyledButton/StyledButton'
 import StyledIcon from '../components/atoms/StyledIcon/StyledIcon'
 import SpiralledImages from '../components/organisms/SpiralledImages/SpiralledImages'
+import CalculationComponent from '../components/organisms/CalculationComponent/CalculationComponent'
 
 const banners = [
   { src: '/event_banners/crossfit.png', alt: 'Crossfit' },
@@ -83,8 +84,10 @@ export default function Home() {
         description="fill the form below to start your journey"
         iconSrc={collection.cross_vector.src}
         iconAlt={collection.cross_vector.alt}
-        placeholders={['Name', 'Email']}
-        types={['text', 'email']}
+        fields={[
+          { placeholder: 'Name', type: 'text', space: 1 },
+          { placeholder: 'Email', type: 'email', space: 1 },
+        ]}
         row={3}
         button={
           <StyledButton
@@ -113,7 +116,49 @@ export default function Home() {
         arrowSrc={collection.button_arrow.src}
         arrowAlt={collection.button_arrow.alt}
       />
+
+      <TitledSection
+        title="be a part of our fit family here"
+        backgroundText="/images/part.png"
+        backgroundAlign="center"
+        description="Training helps you think and feel better. join us!"
+        iconSrc={collection.cross_vector.src}
+        iconAlt={collection.cross_vector.alt}
+      />
+      
       <SpiralledImages images={['/images/spiral1.png', '/images/spiral2.png', '/images/spiral3.png', '/images/spiral4.png', '/images/spiral5.png']} />
-     </main>
+      <CalculationComponent
+        title="Input your BMI"
+        backgroundText="/images/part.png"
+        backgroundAlign="left"
+        description="Duo graece ponderum ne, ei mel aliquando. Pro te tamquam nonumes, nam no nemore epicurei"
+        iconSrc={collection.cross_vector.src}
+        iconAlt={collection.cross_vector.alt}
+        fields={[
+          { placeholder: 'Height / cm', type: 'number', space: 1 },
+          { placeholder: 'Weight / kg', type: 'number', space: 1 },
+          { placeholder: 'Age', type: 'number', space: 1 },
+          { placeholder: 'Gender', type: 'select', options: ['Male', 'Female', 'Other'], space: 1 },
+          { placeholder: 'Select an activity factor:', type: 'text', space: 2 },
+        ]}
+        row={2}
+        button={
+          <StyledButton
+            type="submit"
+            variant="primary"
+            mode="dark"
+            innerText="Calculate"
+            spanComponent={
+              <StyledIcon
+                src={collection.button_arrow.src}
+                alt={collection.button_arrow.alt}
+                fit="padded"
+                align="right"
+              />
+            }
+          />
+        }
+      />
+    </main>
   )
 }
