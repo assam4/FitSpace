@@ -24,7 +24,7 @@ const sections = [
       rightContent: {
         backgroundText: '/images/start_bg.png',
         backgroundAlign: 'left',
-        title: 'Be You, Just stronger!\n Power is in you',
+        title: 'Today is the best\nday to start!',
         description:
           'Unum solum justo ex ius. Pro cu probo laboramus eius insolens euripidis te eos, ut agam tota.',
       },

@@ -5,5 +5,3 @@ export const navigation = [
   { label: 'Blog', key: 'blog', path: '/blog' },
   { label: 'Shop', key: 'shop', path: '/shop' },
 ]
-
-export const arrowIcon = '/collection_vectors/arrow.png'

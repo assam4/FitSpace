@@ -1,0 +1,15 @@
+.split_section_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  overflow: visible;
+  
+}
+
+.split_section_container .child_container {
+  flex: 0.5 0.5 0;
+  min-width: 0;
+  padding-inline: 64px;
+  overflow: visible;
+}

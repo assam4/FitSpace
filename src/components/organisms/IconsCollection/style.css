@@ -1,0 +1,13 @@
+.icons_container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 48px;
+  padding-block: 48px;
+  background-color: #000;
+}
+
+.icons_container .styled_badge_card_container {
+  flex: 1;
+  min-width: 0;
+}

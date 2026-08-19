@@ -1,0 +1,25 @@
+.banner_container {
+  padding-inline: 120px;
+  position: relative;
+  overflow: visible;
+}
+
+.banner_container.black {
+  background-color: #000;
+}
+
+.banner_container .media_styles {
+  overflow: visible;
+  position: relative;
+  width: 520px;
+  height: 720px;
+}
+
+
+.banner_container .styled_image_content.out_top {
+  --out-top: 5%;
+}
+
+.banner_container .styled_image_content.out_bottom {
+  --out-bottom: 5%;
+}

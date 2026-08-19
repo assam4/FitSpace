@@ -1,0 +1,36 @@
+.styled_badge_card_container {
+  padding: 42px 24px;
+}
+
+.styled_badge_card_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  height: 100%;
+  text-align: center;
+}
+
+.styled_badge_card_content_img {
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.styled_badge_card_arrow {
+  position: absolute;
+  top: -24px;
+  right: -24px;
+  z-index: 1;
+  width: 35px;
+  height: 35px;
+}
+
+.styled_badge_card_text {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+  text-transform: uppercase;
+}

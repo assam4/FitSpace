@@ -1,0 +1,35 @@
+.navigation_container {
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.navigation_link {
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 12px;
+    padding-inline: 32px;
+}
+
+.navigation_link.with-span {
+    position: relative;
+    width: fit-content;
+    overflow: visible;
+}
+
+.navigation_link.with-span.active::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    right: 16px;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: white;
+}

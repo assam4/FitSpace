@@ -1,0 +1,5 @@
+.banner_collection {
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
+}

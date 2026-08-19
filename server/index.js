@@ -37,7 +37,7 @@ function withPublicOrigin(value) {
 const app = Fastify({ logger: true })
 
 await app.register(fastifyStatic, {
-  root: path.join(__dirname, 'public'),
+  root: path.join(__dirname, '../public'),
 });
 
 app.get('/api/logo', async () => withPublicOrigin(logo));

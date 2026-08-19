@@ -1,0 +1,55 @@
+.styled_button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-block: 12px;
+  padding-inline: 24px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 12px;
+  border: none;
+}
+
+.styled_button.light {
+  color: #000000;
+  background-color: #ffffff;
+}
+
+.styled_button.dark {
+  color: #ffffff;
+  background-color: transparent;
+}
+
+.styled_button.primary.light {
+  border: 1px solid #000000;
+}
+
+.styled_button.primary.dark {
+  border: 1px solid #ffffff;
+}
+
+.styled_button.with-span {
+  width: fit-content;
+  gap: 16px;
+  padding: 0;
+  text-transform: uppercase;
+  overflow: visible;
+  justify-content: flex-start;
+}
+
+.styled_button.with-span:has(.right) {
+  padding-left: 24px;
+}
+
+.styled_button.with-span:has(.left) {
+  padding-right: 24px;
+}
+
+.styled_button.with-span .styled_icon.padded {
+  align-self: stretch;
+  aspect-ratio: 1;
+}
+
+.styled_button.with-span .styled_icon.right {
+  margin-left: auto;
+}

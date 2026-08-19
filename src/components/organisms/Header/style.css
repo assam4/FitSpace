@@ -1,0 +1,28 @@
+.header_container {
+    padding: 40px;
+    max-width: 100vw;
+    padding-inline: 32px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+.brand_container,
+.navigations_container,
+.controls_container {
+    padding-block: 8px;
+}
+
+.brand_container {
+    max-width: 136px;
+    width: 136px;
+}
+
+.brand_container .styled_icon.fill,
+.brand_container .styled_icon.fill .styled_icon_image {
+    width: 100%;
+    height: auto;
+}
+

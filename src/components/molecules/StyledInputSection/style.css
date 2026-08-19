@@ -1,0 +1,27 @@
+.styled_input_section {
+  display: grid;
+  grid-template-columns: repeat(var(--items-per-row, 3), minmax(0, 1fr));
+  gap: 16px;
+  align-items: center;
+  width: 100%;
+}
+
+.styled_input_section_field {
+  width: 100%;
+  padding-block: 12px;
+  padding-inline: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+  background: transparent;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.styled_input_section_field::placeholder {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.styled_input_section .styled_button.with-span {
+  width: 100%;
+  justify-content: flex-start;
+}

@@ -1,6 +1,6 @@
 # FitSpace
 
-Fitness landing page built with React and Vite. Includes a header with navigation, an auto-playing banner slider, and split content sections.
+Fitness landing page built with React and Vite. Page copy lives in `src/constants.js`. Images are imported from `src/assets/`.
 
 ## Stack
 
@@ -16,7 +16,7 @@ npm install
 npm run dev
 ```
 
-Open the local URL shown in the terminal (usually `http://localhost:5173`).
+Open the local URL shown by Vite (usually `http://localhost:5173`).
 
 ## Scripts
 
@@ -31,19 +31,12 @@ Open the local URL shown in the terminal (usually `http://localhost:5173`).
 
 ```
 src/
+  assets/                # photos and icons
+  constants.js           # texts + imported images
   components/
-    Header/          # Logo, nav links, language toggle, CTA
-    Slider/          # Event banners with dots + autoplay
-    SplitSection/    # Text + image sections
   pages/
-    Home.jsx         # Main page composition
-  constants.js       # Navigation, banners, section content
-public/
-  images/            # Logos, icons, content photos
-  event_banners/     # Slider banners
+    Home.jsx             # composes the home page
 ```
-
-Static assets live in `public/` and are referenced by absolute paths (e.g. `/images/brand_logo_vector.png`) from `src/constants.js`.
 
 ## Notes
 

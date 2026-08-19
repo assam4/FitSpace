@@ -1,0 +1,27 @@
+.styled_image_content {
+  --out-top: 0%;
+  --out-bottom: 0%;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+/* change these % to control how far the image goes out of the box */
+.styled_image_content.out_top {
+  --out-top: 12%;
+}
+
+.styled_image_content.out_bottom {
+  --out-bottom: 12%;
+}
+
+.styled_image_content_image {
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: calc(-1 * var(--out-top));
+  height: calc(100% + var(--out-top) + var(--out-bottom));
+  object-fit: cover;
+}
