@@ -67,8 +67,11 @@ export default function Home() {
   return (
     <main>
       <Slider banners={banners} />
+      
       <BannerCollection sections={sections} collection={collection} />
+      
       <IconsCollection collectionProps={collection} />
+      
       <FeatureCard
         firstBackgroundSrc="/images/bg_image.jpg"
         secondBackgroundSrc="/images/feature_media.jpg"
@@ -77,6 +80,7 @@ export default function Home() {
         arrowSrc={collection.arrow.src}
         headerTitle="JOIN US"
       />
+
       <TitledSection
         title="Start here"
         backgroundText="/images/go.png"
@@ -106,6 +110,7 @@ export default function Home() {
           />
         }
       />
+
       <SplitMapHeading
         title="Find us near you"
         description="Nec suas signiferumque id. An eum labore commodo principes. Usu diam noluisse cu, nam adipisci"
@@ -128,36 +133,50 @@ export default function Home() {
       
       <SpiralledImages images={['/images/spiral1.png', '/images/spiral2.png', '/images/spiral3.png', '/images/spiral4.png', '/images/spiral5.png']} />
       <CalculationComponent
-        title="Input your BMI"
-        backgroundText="/images/part.png"
-        backgroundAlign="left"
-        description="Duo graece ponderum ne, ei mel aliquando. Pro te tamquam nonumes, nam no nemore epicurei"
-        iconSrc={collection.cross_vector.src}
-        iconAlt={collection.cross_vector.alt}
-        fields={[
-          { placeholder: 'Height / cm', type: 'number', space: 1 },
-          { placeholder: 'Weight / kg', type: 'number', space: 1 },
-          { placeholder: 'Age', type: 'number', space: 1 },
-          { placeholder: 'Gender', type: 'select', options: ['Male', 'Female', 'Other'], space: 1 },
-          { placeholder: 'Select an activity factor:', type: 'text', space: 2 },
-        ]}
-        row={2}
-        button={
-          <StyledButton
-            type="submit"
-            variant="primary"
-            mode="dark"
-            innerText="Calculate"
-            spanComponent={
-              <StyledIcon
-                src={collection.button_arrow.src}
-                alt={collection.button_arrow.alt}
-                fit="padded"
-                align="right"
-              />
-            }
-          />
-        }
+        titleData={{
+          title: 'Input your BMI',
+          backgroundText: '/images/part.png',
+          backgroundAlign: 'left',
+          description: 'Duo graece ponderum ne, ei mel aliquando. Pro te tamquam nonumes, nam no nemore epicurei',
+          iconSrc: collection.cross_vector.src,
+          iconAlt: collection.cross_vector.alt,
+          fields: [
+            { placeholder: 'Height / cm', type: 'number', space: 1 },
+            { placeholder: 'Weight / kg', type: 'number', space: 1 },
+            { placeholder: 'Age', type: 'number', space: 1 },
+            { placeholder: 'Gender', type: 'select', options: ['Male', 'Female', 'Other'], space: 1 },
+            { placeholder: 'Select an activity factor:', type: 'text', space: 2 },
+          ],
+          row: 2,
+          button: (
+            <StyledButton
+              type="submit"
+              variant="primary"
+              mode="dark"
+              innerText="Calculate"
+              spanComponent={
+                <StyledIcon
+                  src={collection.button_arrow.src}
+                  alt={collection.button_arrow.alt}
+                  fit="padded"
+                  align="right"
+                />
+              }
+            />
+          ),
+        }}
+        tableData={{
+          columns: 2,
+          rows: 5,
+          headers: ['BMI', 'Weight status'],
+          tableData: [
+            ['Below 18.5', 'Underweight'],
+            ['18.5 - 24.9', 'Healthy'],
+            ['25.0 - 29.9', 'Overweight'],
+            ['30.0 - and Above', 'Obese']
+          ],
+          description: `BMR Metabolic Rate / BMI Body Mass Index`
+        }}
       />
     </main>
   )

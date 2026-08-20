@@ -1,0 +1,32 @@
+.styled_table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: separate;
+  border-spacing: 0;
+  color: white;
+}
+
+th,
+td {
+  padding: 20px 30px;
+  text-align: center;
+  position: relative;
+}
+
+.bottom_border {
+  border-bottom: 1px solid white;
+}
+
+.right_border {
+  border-right: 1px solid white;
+}
+
+.unfinish_bottom_border::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 50%;
+  height: 1px;
+  background: white;
+}
