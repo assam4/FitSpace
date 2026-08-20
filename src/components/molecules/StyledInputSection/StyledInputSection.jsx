@@ -15,14 +15,20 @@ export default function StyledInputSection({
       {fields.map((field, index) => {
         const spanStyle = { gridColumn: `span ${Number(field.space) || 1}` }
         const fieldKey = `${field.placeholder}-${index}`
+        const fieldClassName = [
+          'styled_input_section_field',
+          field.error ? 'error' : '',
+        ]
+          .filter(Boolean)
+          .join(' ')
 
         if (field.type === 'select') {
           return (
             <select
               key={fieldKey}
-              className="styled_input_section_field"
-              name={field.placeholder?.toLowerCase()}
-              defaultValue=""
+              className={fieldClassName}
+              name={field.name || field.placeholder?.toLowerCase()}
+              value={field.value ?? ''}
               onChange={field.onChange}
               style={spanStyle}
             >
@@ -41,12 +47,14 @@ export default function StyledInputSection({
         return (
           <input
             key={fieldKey}
-            className="styled_input_section_field"
+            className={fieldClassName}
             type={field.type || 'text'}
             placeholder={field.placeholder}
-            name={field.placeholder?.toLowerCase()}
+            value={field.value}
             onChange={field.onChange}
+            name={field.name || field.placeholder?.toLowerCase()}
             style={spanStyle}
+            readOnly={field.readOnly}
           />
         )
       })}

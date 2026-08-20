@@ -9,11 +9,11 @@ import StyledIcon from '../components/atoms/StyledIcon/StyledIcon'
 import SpiralledImages from '../components/organisms/SpiralledImages/SpiralledImages'
 import CalculationComponent from '../components/organisms/CalculationComponent/CalculationComponent'
 
-const banners = [
+const sliderComponents = [
   { src: '/event_banners/crossfit.png', alt: 'Crossfit' },
   { src: '/event_banners/membership.jpeg', alt: 'Membership' },
   { src: '/event_banners/national_day.jpg', alt: 'National Day' },
-]
+];
 
 const collection = {
   arrow: { src: '/collection_vectors/arrow.png', alt: 'arrow icon' },
@@ -26,7 +26,7 @@ const collection = {
     { id: 4, src: '/collection_vectors/n.png', text: 'forza' },
     { id: 5, src: '/collection_vectors/c.png', text: 'balance fitness' },
     { id: 6, src: '/collection_vectors/snow.png', text: 'body sculpt' },
-    { id: 7, src: '/collection_vectors/go.png', text: 'GO !' },
+    { id: 7, src: '/collection_vectors/snow.png', text: 'body sculpt' },
   ],
 }
 
@@ -66,7 +66,7 @@ const sections = [
 export default function Home() {
   return (
     <main>
-      <Slider banners={banners} />
+      <Slider components={sliderComponents.map(component => (<img src={component.src} alt={component.alt} className="slider_banner" />))} />
       
       <BannerCollection sections={sections} collection={collection} />
       
@@ -140,30 +140,7 @@ export default function Home() {
           description: 'Duo graece ponderum ne, ei mel aliquando. Pro te tamquam nonumes, nam no nemore epicurei',
           iconSrc: collection.cross_vector.src,
           iconAlt: collection.cross_vector.alt,
-          fields: [
-            { placeholder: 'Height / cm', type: 'number', space: 1 },
-            { placeholder: 'Weight / kg', type: 'number', space: 1 },
-            { placeholder: 'Age', type: 'number', space: 1 },
-            { placeholder: 'Gender', type: 'select', options: ['Male', 'Female', 'Other'], space: 1 },
-            { placeholder: 'Select an activity factor:', type: 'text', space: 2 },
-          ],
           row: 2,
-          button: (
-            <StyledButton
-              type="submit"
-              variant="primary"
-              mode="dark"
-              innerText="Calculate"
-              spanComponent={
-                <StyledIcon
-                  src={collection.button_arrow.src}
-                  alt={collection.button_arrow.alt}
-                  fit="padded"
-                  align="right"
-                />
-              }
-            />
-          ),
         }}
         tableData={{
           columns: 2,

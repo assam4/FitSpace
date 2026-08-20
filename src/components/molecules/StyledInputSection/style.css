@@ -21,6 +21,10 @@
   color: rgba(255, 255, 255, 0.55);
 }
 
+.styled_input_section_field.error {
+  border-color: #e53935;
+}
+
 select.styled_input_section_field {
   appearance: none;
   cursor: pointer;
